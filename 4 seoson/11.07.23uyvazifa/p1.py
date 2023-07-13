@@ -7,54 +7,45 @@ from PyQt5.QtGui import*
 class test(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setMinimumSize(600,600)
-        self.setMaximumSize(600,600)
-        lbl1=QLabel("Test 1\nA",self)
-        lbl1.setFont(QFont("Arial",13))
-        lbl1.setGeometry(10,10,100,50)
-        self.lblr1=QRadioButton("2",self)
-        self.lblr1.setGeometry(20,60,100,50)
-        self.lblr2=QRadioButton("2",self)
-        self.lblr2.setGeometry(130,60,100,50)
+        self.oyna = QWidget()
+        self.oyna.setMinimumSize(300,300)
+        self.oyna.setMaximumSize(300,300)
+        self.vb=QVBoxLayout()
+        ls1=["Andijon viloyati","Buxoro viloyati","Fargʻona viloyati","Jizzax viloyati","Xorazm viloyati","Namangan viloyati","Navoiy viloyati","Qashqadaryo viloyati","Qoraqalpogʻiston Respublikasi","Samarqand viloyati	","Sirdaryo viloyati","Surxondaryo viloyati","Toshkent viloyati"]
+        ls2=[" Erkak"," ayol"]
+        ls3=[" o'zbek"," tojik"," qozoq"]
+        self.cmb1=QComboBox()
+        self.cmb1.addItems(ls1)
+        self.cmb2=QComboBox()
+        self.cmb2.addItems(ls2)
+        self.cmb3=QComboBox()
+        self.cmb3.addItems(ls3)
+        self.vb.addWidget(self.cmb1)
+        self.vb.addWidget(self.cmb2)
+        self.vb.addWidget(self.cmb3)
+        btn=QPushButton("enter")
+        btn.clicked.connect(self.enter)
+        self.vb.addWidget(btn)
 
-        lbl21 = QLabel("Test 2\nA", self)
-        
-        lbl21.setFont(QFont("Arial", 13))
-        lbl21.setGeometry(10, 110, 100, 50)
-        self.lblr21 = QRadioButton("2", self)
-        self.lblr21.setGeometry(20, 170, 100, 50)
-        self.lblr22 = QRadioButton("2", self)
-        self.lblr22.setGeometry(130, 170, 100, 50)
+        self.oyna.setLayout(self.vb)
+        self.oyna.show()
 
-        lbl31 = QLabel("Test 3\nA", self)
-        lbl31.setFont(QFont("Arial", 13))
-        lbl31.setGeometry(10, 220, 100, 50)
-        self.lblr31 = QRadioButton("2", self)
-        self.lblr31.setGeometry(20,280, 100, 50)
-        self.lblr32 = QRadioButton("2", self)
-        self.lblr32.setGeometry(130,280, 100, 50)
-
-        lbl41 = QLabel("Test 4\nA", self)
-        lbl41.setFont(QFont("Arial", 13))
-        lbl41.setGeometry(10, 330, 100, 50)
-        self.lblr41 = QRadioButton("2", self)
-        self.lblr41.setGeometry(20,390, 100, 50)
-        self.lblr42 = QRadioButton("2", self)
-        self.lblr42.setGeometry(130,390, 100, 50)
-
-        lbl51 = QLabel("Test 5\nA", self)
-        lbl51.setFont(QFont("Arial", 13))
-        lbl51.setGeometry(10, 440, 100, 50)
-        self.lblr51 = QRadioButton("2", self)
-        self.lblr51.setGeometry(20, 500, 100, 50)
-        self.lblr52 = QRadioButton("2", self)
-        self.lblr52.setGeometry(130, 500, 100, 50)
-
+    def enter(self):
+        f=open("file.txt","w+")
+        st=""
+        st+=self.cmb1.currentText()
+        st+=self.cmb2.currentText()
+        st+=self.cmb3.currentText()
+        ls=st.split()
+        f.write("Tug'ilgan viloyati "+str(ls[0])+str(ls[1])+"\n")
+        f.write("Jinsi " + str(ls[2])+"\n")
+        f.write("Millati " + str(ls[3]) + "\n")
+        print(st)
 
 
 app = QApplication(sys.argv)
 cal = test()
-cal.show()
+
 sys.exit(app.exec_())
 
 
