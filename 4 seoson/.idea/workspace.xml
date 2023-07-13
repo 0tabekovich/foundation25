@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99865aca-9691-4f50-b1f8-1945cd3443e8" name="Changes" comment="" />
+    <list default="true" id="99865aca-9691-4f50-b1f8-1945cd3443e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/11.07.2023/p1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../github" beforeDir="false" afterPath="$PROJECT_DIR$/../github" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kereli/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kereli/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +21,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
