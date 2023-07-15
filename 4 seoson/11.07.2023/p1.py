@@ -31,7 +31,7 @@ class fayl1(QMainWindow):
 
 
 
-
+            
     def New(self,k):
         self.msg.setGeometry(10,10,200,400)
         self.msg.setInformativeText(f"{k}")
